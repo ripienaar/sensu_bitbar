@@ -32,7 +32,7 @@ begin
     end
 
     if issues.empty?
-      puts "%s | color=green" % SENSU_NAME
+      puts "%s | color=green href=%s" % [SENSU_NAME, DASHBOARD_URL]
       puts "---"
       puts "No events found"
     else
