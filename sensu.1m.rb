@@ -7,10 +7,11 @@
 # here and enjoy.  Copy it multiple times with unique names for
 # multiple sensu servers
 
-SENSU_NAME="Sensu"
-SENSU_HOST="http://sensu.example.net:4567/"
-DASHBOARD_URL="http://uchiwa.example.net/#/events"
-PROXY="http://10.1.4.1" # set to nil to avoid using a proxy
+SENSU_NAME="Sensu"                                  # text appearing on the menu in green/red/yello
+SENSU_HOST="http://sensu.example.net:4567/"         # your sensu api
+DASHBOARD_URL="http://uchiwa.example.net/#/events"  # a link that will open if you click on an event
+PROXY="http://10.1.4.1"                             # set to nil to avoid using a proxy
+SHOW_EVENTS=5                                       # how many events to show in the drop down
 
 require 'rubygems'
 require 'rest-client'
@@ -40,8 +41,8 @@ begin
       puts "%s | color=%s" % [SENSU_NAME, COLORS[status]]
       puts "---"
 
-      issues[0..5].each do |issue|
-        puts "%s - %s | href=%s" % [issue[:client], issue[:check], DASHBOARD_URL]
+      issues[0..SHOW_EVENTS].each do |issue|
+        puts "%s - %s | color=%s href=%s" % [issue[:client], issue[:check], COLORS[issue[:status]], DASHBOARD_URL]
       end
     end
   else
