@@ -17,7 +17,7 @@ require 'rubygems'
 require 'rest-client'
 require 'json'
 
-COLORS = {0 => "green", 1 => "yellow", 2 => "red", 3 => "gray"}
+COLORS = {0 => "green", 1 => "orange", 2 => "red", 3 => "gray"}
 
 issues = []
 
