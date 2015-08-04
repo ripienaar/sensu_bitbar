@@ -32,7 +32,7 @@ begin
     end
 
     if issues.empty?
-      puts "%s | color=green href=%s" % [SENSU_NAME, DASHBOARD_URL]
+      puts "%s | color=%s href=%s" % [SENSU_NAME, COLORS[0], DASHBOARD_URL]
       puts "---"
       puts "No events found"
     else
@@ -46,12 +46,12 @@ begin
       end
     end
   else
-    puts "%s | color=red" % SENSU_NAME
+    puts "%s | color=%s" % [SENSU_NAME, COLORS[2]]
     puts "---"
     puts "Could not fetch events: %s" % events.code
   end
 rescue
-  puts "%s | color=red" % SENSU_NAME
+  puts "%s | color=%s" % [SENSU_NAME, COLORS[2]]
   puts "---"
   puts "Could not fetch events: %s: %s" % [$!.class, $!.to_s]
 end
