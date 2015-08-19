@@ -44,6 +44,10 @@ begin
       issues[0..SHOW_EVENTS].each do |issue|
         puts "%s - %s | color=%s href=%s" % [issue[:client], issue[:check], COLORS[issue[:status]], DASHBOARD_URL]
       end
+
+      if issues.size > SHOW_EVENTS
+        puts "...and %d more" % issues.size - SHOW_EVENTS
+      end
     end
   else
     puts "%s | color=%s" % [SENSU_NAME, COLORS[2]]
