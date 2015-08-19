@@ -12,12 +12,12 @@ SENSU_HOST="http://sensu.example.net:4567/"         # your sensu api
 DASHBOARD_URL="http://uchiwa.example.net/#/events"  # a link that will open if you click on an event
 PROXY="http://10.1.4.1"                             # set to nil to avoid using a proxy
 SHOW_EVENTS=5                                       # how many events to show in the drop down
+COLORS = {0 => "green", 1 => "orange", 2 => "red", 3 => "gray"}
 
 require 'rubygems'
 require 'rest-client'
 require 'json'
 
-COLORS = {0 => "green", 1 => "orange", 2 => "red", 3 => "gray"}
 
 issues = []
 
