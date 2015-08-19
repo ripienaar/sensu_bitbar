@@ -28,6 +28,15 @@ COLORS = {0 => "green", 1 => "orange", 2 => "red", 3 => "gray"}
 The colors above are parsed by BitBar, these work for me but I made them easily adjustable for color
 blind people or those who just do not like my choices.
 
+Authentication against the API can be done as follows:
+
+```
+SENSU_HOST="http://bob:secret@sensu.example.net:4567/"
+```
+
+You need the [RestClient](https://github.com/rest-client/rest-client) Gem installed before this will
+work, you can simply run this on the CLI to test it
+
 That's it, enjoy.
 
 Contact?
