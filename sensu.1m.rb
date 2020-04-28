@@ -46,7 +46,7 @@ begin
       end
 
       if issues.size > SHOW_EVENTS
-        puts "...and %d more" % issues.size - SHOW_EVENTS
+        puts "...and %d more" % (issues.size - SHOW_EVENTS)
       end
     end
   else
